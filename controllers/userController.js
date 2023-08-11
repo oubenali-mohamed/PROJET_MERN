@@ -8,7 +8,7 @@ module.exports.getAllUsers = async (req, res) => {
 
 module.exports.userInfo = (req, res) => {
   if (!ObjectID.isValid(req.params.id))
-    return res.status(400).send('ID unknown : ' + req.params.id)
+    return res.status(400).send('ID Inconnu : ' + req.params.id)
 
   UserModel.findById(req.params.id)
     .select('-password')
@@ -23,7 +23,7 @@ module.exports.userInfo = (req, res) => {
 
 module.exports.updateUser = async (req, res) => {
   if (!ObjectID.isValid(req.params.id))
-    return res.status(400).send('ID unknown : ' + req.params.id)
+    return res.status(400).send('ID Inconnu : ' + req.params.id)
   try {
     const updatedUser = await UserModel.findOneAndUpdate(
       { _id: req.params.id },
