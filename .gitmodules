@@ -1,0 +1,3 @@
+[submodule "client"]
+	path = client
+	url = /Users/mohamedoubenali/Desktop/PROJET_MERN/client
